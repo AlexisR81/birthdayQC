@@ -1,0 +1,18 @@
+{%extends 'base.html.twig'%}
+
+{%block body%}
+<h1> Post avec le tag {{idtag}}</h1>
+    {% for item in posts %}
+
+    {% for tag in item.tags %}
+
+    {% if tag == idtag %}
+    <p><a href="{{path("app_post_show",{"id":item.id})}}">{{item.title}}<a/></p>
+    {% endif %}
+
+    {% endfor %}
+    
+    {% endfor %}
+    
+
+{%endblock%}

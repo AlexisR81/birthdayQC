@@ -5,9 +5,9 @@
 <ul>
    {% for item in posts %}
     <li>
-    <h1>{{ item.title }}</h1>
+    <h1><a href="{{path("app_post_show",{"id":item.id})}}">{{ item.title }}<a/></h1>
     {% for tag in item.tags %}
-    <span>{{ tag}}</span>
+    <span><a href="{{path("app_post_category",{"id":tag})}}">{{tag}}</a></span>
     {% endfor %}
     </li>
     {% endfor %}
